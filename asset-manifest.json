@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/boookworm/static/css/main.122fecc8.chunk.css",
+    "main.js": "/boookworm/static/js/main.81da6c82.chunk.js",
+    "main.js.map": "/boookworm/static/js/main.81da6c82.chunk.js.map",
+    "runtime-main.js": "/boookworm/static/js/runtime-main.3876c52b.js",
+    "runtime-main.js.map": "/boookworm/static/js/runtime-main.3876c52b.js.map",
+    "static/css/2.c66f24a4.chunk.css": "/boookworm/static/css/2.c66f24a4.chunk.css",
+    "static/js/2.a7f29fcc.chunk.js": "/boookworm/static/js/2.a7f29fcc.chunk.js",
+    "static/js/2.a7f29fcc.chunk.js.map": "/boookworm/static/js/2.a7f29fcc.chunk.js.map",
+    "static/js/3.47e38761.chunk.js": "/boookworm/static/js/3.47e38761.chunk.js",
+    "static/js/3.47e38761.chunk.js.map": "/boookworm/static/js/3.47e38761.chunk.js.map",
+    "index.html": "/boookworm/index.html",
+    "static/css/2.c66f24a4.chunk.css.map": "/boookworm/static/css/2.c66f24a4.chunk.css.map",
+    "static/css/main.122fecc8.chunk.css.map": "/boookworm/static/css/main.122fecc8.chunk.css.map",
+    "static/js/2.a7f29fcc.chunk.js.LICENSE.txt": "/boookworm/static/js/2.a7f29fcc.chunk.js.LICENSE.txt",
+    "static/media/1.4ce45dee.jpg": "/boookworm/static/media/1.4ce45dee.jpg",
+    "static/media/chat-icon.f032be1d.svg": "/boookworm/static/media/chat-icon.f032be1d.svg",
+    "static/media/image.4ce45dee.png": "/boookworm/static/media/image.4ce45dee.png",
+    "static/media/logo-no-bg.4d881dc9.svg": "/boookworm/static/media/logo-no-bg.4d881dc9.svg",
+    "static/media/notification.aa8f8c40.mp3": "/boookworm/static/media/notification.aa8f8c40.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3876c52b.js",
+    "static/css/2.c66f24a4.chunk.css",
+    "static/js/2.a7f29fcc.chunk.js",
+    "static/css/main.122fecc8.chunk.css",
+    "static/js/main.81da6c82.chunk.js"
+  ]
+}
