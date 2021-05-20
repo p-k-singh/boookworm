@@ -1,0 +1,3 @@
+export const INSERT_MESSAGE = 'INSERT_MESSAGE'
+export const SET_CLIENT = 'SET_CLIENT'
+export const RESET_MESSAGE = 'RESET_MESSAGE'
