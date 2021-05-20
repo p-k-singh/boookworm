@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import fire from "../../fire";
-import sample from "../../Assets/lovid.mp4";
 import Login from "./Login";
 import Signup from "./Signup";
 import "./Auth.css";
@@ -147,7 +146,7 @@ function Welcome(props) {
             zIndex: "-1",
           }}
         >
-          <source src={sample} type="video/mp4"></source>
+          <source  type="video/mp4"></source>
         </video>
         <div className="lora">{lora}</div>
       </div>
