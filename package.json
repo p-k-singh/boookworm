@@ -2,7 +2,7 @@
   "name": "bookworm",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://p-k-singh.github.io/bookworm",
+  "homepage": "https://p-k-singh.github.io/boookworm",
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
     "@emotion/react": "^11.4.0",
@@ -25,8 +25,6 @@
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
-    "react-chat-engine": "^1.8.11",
-    "react-chat-plugin": "^0.1.17",
     "react-chat-window": "^1.2.1",
     "react-dom": "^17.0.1",
     "react-gender-input": "^1.0.2",

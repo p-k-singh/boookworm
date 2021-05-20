@@ -2,7 +2,7 @@ import * as actions from '../../actions/index'
 import { connect } from 'react-redux'
 //  import { Launcher } from 'react-chat-window'
 import ChatBox, { ChatFrame } from 'react-chat-plugin';
-import {Launcher} from '../ChatLauncher'
+import { Launcher } from '../ChatLauncher'
 import {
     TextField,
     Button,
@@ -43,32 +43,32 @@ const PersonalChat = (props) => {
             .then(res => {
                 var msgs = res.data;
                 var temp = [];
-                for(var i=0;i<msgs.length;i++){
-                    if(msgs[i].senderUserId===userId){
+                for (var i = 0; i < msgs.length; i++) {
+                    if (msgs[i].senderUserId === userId) {
                         temp.push({
                             author: 'me',
-                            type:'text',
-                            data:{
-                              text:msgs[i].message
+                            type: 'text',
+                            data: {
+                                text: msgs[i].message
                             }
-                          })
+                        })
                     }
-                    else{
+                    else {
                         temp.push(
                             {
                                 author: 'them',
-                                type:'text',
-                                data:{
-                                  text:msgs[i].message
+                                type: 'text',
+                                data: {
+                                    text: msgs[i].message
                                 }
-                              }
+                            }
                         )
                     }
                 }
-                for(var i=0;i<temp.length;i++){
+                for (var i = 0; i < temp.length; i++) {
                     props.insertMessages(temp[i]);
                 }
-                
+
             })
     }, [])
     //console.log(props.messages)
@@ -87,7 +87,7 @@ const PersonalChat = (props) => {
 
                 <Grid style={{}} item xs={12} sm={4}>
 
-                {/* <ChatFrame
+                    {/* <ChatFrame
       chatbox={
         <ChatBox
           //onSendMessage={handleOnSendMessage}
@@ -121,7 +121,7 @@ const PersonalChat = (props) => {
                         isOpen={true}
                     />
                 </Grid>
-          
+
             </Grid>
             {/* <Grid container className={classes.root} spacing={2}> */}
 
