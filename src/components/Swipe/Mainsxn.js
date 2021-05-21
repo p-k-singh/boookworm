@@ -265,7 +265,7 @@ export default function App(props) {
                   whileTap={{ cursor: "grabbing" }}
                 >
                   {/* <div style = {{backgroundImage: 'img'}}></div> */}
-                  <img src={person.img || BookImg} />
+                  <img  src={person.bookPicLink} />
                 </Book>
               </BookWrapper>
             </TopContainer>
