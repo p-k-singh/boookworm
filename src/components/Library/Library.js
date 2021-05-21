@@ -115,6 +115,7 @@ export default function BottomAppBar() {
   const [videoConstraints, setVideoContraints] = useState("user");
   const [allAddedBooks, setAllAddedBooks] = useState([])
   const [loading,setLoading] = useState(true)
+  const [bookUploading,setBookUploading] = useState(false)
 
   useEffect(() => {
     let user = firebase.auth().currentUser;
@@ -189,6 +190,7 @@ export default function BottomAppBar() {
   }
 
   const handleSubmit = async () => {
+    setBookUploading(true)
     let user = firebase.auth().currentUser;
     let userId = user.uid;
     //console.log(bookName, bookAuthor, description, imgSrc)
@@ -238,17 +240,17 @@ export default function BottomAppBar() {
           }
         }
         axios.post('https://6h6nlvoxy8.execute-api.ap-south-1.amazonaws.com/Staging01' + `/user/${userId}`, body)
-        .then(res => console.log(res))
-        .catch(err => console.log(err))
+        .then(res => {console.log(res);
+          window.location.reload()
+        })
+        .catch(err => {
+          alert(err)
+          window.location.reload()
+        })
       })
 
     })
     // .then((initiateResult)=>{
-
-    
-
-    
-
     
   }
 
@@ -327,7 +329,7 @@ export default function BottomAppBar() {
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >
-        {body}
+       {bookUploading ? <Loader mt='40%' /> : body } 
       </Modal>
       <CssBaseline />
       <Paper square className={classes.paper}>
