@@ -114,6 +114,7 @@ export default function BottomAppBar() {
   const [bookName, setBookName] = useState();
   const [videoConstraints, setVideoContraints] = useState("user");
   const [allAddedBooks, setAllAddedBooks] = useState([])
+  const [loading,setLoading] = useState(true)
 
   useEffect(() => {
     let user = firebase.auth().currentUser;
@@ -121,7 +122,10 @@ export default function BottomAppBar() {
     axios.get('https://6h6nlvoxy8.execute-api.ap-south-1.amazonaws.com/Staging01' + `/user/all-books?userId=${userId}`).then(res => {
       console.log(res)
       setAllAddedBooks(res.data)
-    }).catch(err => alert(JSON.stringify(err)))
+      setLoading(false)
+    }).catch(err => {alert(JSON.stringify(err))
+    setLoading(false)
+    })
 
   }, [])
 
@@ -234,7 +238,7 @@ export default function BottomAppBar() {
           }
         }
         axios.post('https://6h6nlvoxy8.execute-api.ap-south-1.amazonaws.com/Staging01' + `/user/${userId}`, body)
-        .then(res => alert(res))
+        .then(res => console.log(res))
         .catch(err => console.log(err))
       })
 
@@ -331,7 +335,7 @@ export default function BottomAppBar() {
           Welcome !
         </Typography>
         <Divider />
-        {allAddedBooks.length===0 && <Loader mt='10%' /> }
+        {loading===true && <Loader mt='10%' /> }
         <List className={classes.list}>
           {allAddedBooks.map((book, id) => {
             return (

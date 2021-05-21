@@ -131,10 +131,27 @@ function App(props) {
   }
 
 
-
   if (!user) {
     return (
-      <Auth setUser={setUser} />
+      <div className={classes.root}>
+
+     
+
+      <main className={classes.content}>
+        <div className={classes.toolbar} />
+        <Switch>
+          <Route
+             exact path="/"
+              render={() => {
+                return <Auth setUser={setUser}  />;
+              }}
+            />
+          <Redirect to="/" />
+        </Switch>
+        {/* <Chat client={cclient} /> */}
+      </main>
+    </div>
+      
     );
 
   }
