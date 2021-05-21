@@ -103,6 +103,7 @@ const ChatIndex = (props) => {
               matchedUserBooks: allUsers[i].matchedUserBooks,
               yourBooks: allUsers[i].yourBooks
             })
+            break;
           }
           console.log('temp',temp)
           setChats(temp)
