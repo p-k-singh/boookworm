@@ -8,7 +8,8 @@ import Profile from './components/Profile/Profile'
 import Chat from './components/Chat/chatIndex'
 import PersonalChat from './components/Chat/PersonalChat'
 import * as actions from './actions/index'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
+import axios from 'axios'
 
 import Loader from './components/Utils/Loading'
 
@@ -41,43 +42,44 @@ const useStyles = makeStyles((theme) => ({
 function App(props) {
   const classes = useStyles();
   const [user, setUser] = useState("");
-  const [loading,setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
+  const [firstTime, setFirstTime] = useState("/swipe");
   // const [userId,setUserId] = useState(null);
   //const [cclient,setClient] = useState();
   useEffect(async () => {
     //async function checkUse
-    if(!user)
-    return;
+    if (!user)
+      return;
     let userId = user.uid;
     const client = new W3CWebSocket(
-        `wss://sdmwwtbgn1.execute-api.ap-south-1.amazonaws.com/dev01?userid=${userId}`
+      `wss://sdmwwtbgn1.execute-api.ap-south-1.amazonaws.com/dev01?userid=${userId}`
     );
     console.log(userId);
     client.onopen = () => {
       console.log("WebSocket Client Connected");
 
       props.setClient(client);
-    //sendNumber()
+      //sendNumber()
     };
-    client.onclose = function() {
-        console.log('echo-protocol Client Closed');
+    client.onclose = function () {
+      console.log('echo-protocol Client Closed');
     };
     client.onmessage = (message) => {
       console.log(message)
-      var msg= JSON.parse(message.data);
-      console.log('77',msg)
-      if(msg.message!=="Internal server error")
-      props.insertMessages({
-        author: 'them',
-        type:'text',
-        data:{
-          text:msg.message
-        }
-      })
+      var msg = JSON.parse(message.data);
+      console.log('77', msg)
+      if (msg.message !== "Internal server error")
+        props.insertMessages({
+          author: 'them',
+          type: 'text',
+          data: {
+            text: msg.message
+          }
+        })
     };
     return () => {
-        alert('zxc')
-       client.close()
+      alert('zxc')
+      client.close()
     }
     //console.log(user)
   }, [user]);
@@ -88,26 +90,49 @@ function App(props) {
         setUser(user);
       } else {
         setUser("");
+        setLoading(false);
       }
-      setLoading(false);
+
     });
   };
+  useEffect(() => {
+    if (user) {
+      let userId = firebase.auth().currentUser.uid;
+
+      axios
+        .get(
+          "https://6h6nlvoxy8.execute-api.ap-south-1.amazonaws.com/Staging01" +
+          `/user?userId=${userId}`
+        )
+        .then((res) => {
+          console.log(res)
+          if (!res.data) {
+            setFirstTime("/myProfile")
+          }
+          setLoading(false);
+        }).catch(err => {
+          console.log(err)
+          setLoading(false);
+        })
+
+    }
+
+  }, [user]);
 
   useEffect(() => {
     authListener();
   }, []);
 
 
-  if(loading){
-    return(
-      
-        <Loader mt='18%' />
-    
-     
+  if (loading) {
+    return (
+      <Loader mt='18%' />
     );
   }
 
-  if(!user){
+
+
+  if (!user) {
     return (
       <Auth setUser={setUser} />
     );
@@ -117,36 +142,36 @@ function App(props) {
 
   return (
     <div className={classes.root}>
-      
-        <Navigation />
-      
+
+      <Navigation />
+
 
       <main className={classes.content}>
         <div className={classes.toolbar} />
-          <Switch>
-            {/* Home page (DashBoard Content) */}
-            <Route exact path="/myLibrary" component={Library} />
-            <Route exact path="/forum" component={Forum} />
-            <Route exact path="/swipe" component={Swipe} />
-            <Route exact path="/myProfile" component={Profile} />
-            <Route exact path="/chat" component={Chat} />
-            {/* <Route exact path="/myProfile" component={MyProfile} /> */}
-            <Route
-              path="/chat/:id"
-              render={(props) => {
-                return <PersonalChat {...props} />;
-              }}
-            /> 
+        <Switch>
+          {/* Home page (DashBoard Content) */}
+          <Route exact path="/myLibrary" component={Library} />
+          <Route exact path="/forum" component={Forum} />
+          <Route exact path="/swipe" component={Swipe} />
+          <Route exact path="/myProfile" component={Profile} />
+          <Route exact path="/chat" component={Chat} />
+          {/* <Route exact path="/myProfile" component={MyProfile} /> */}
+          <Route
+            path="/chat/:id"
+            render={(props) => {
+              return <PersonalChat {...props} />;
+            }}
+          />
 
-            {/* <Route
+          {/* <Route
               path="/orderSuccess/:id"
               render={(props) => {
                 return <Success {...props} />;
               }}
             /> */}
-            <Redirect to="/" />
-          </Switch>
-          {/* <Chat client={cclient} /> */}
+          <Redirect to={firstTime} />
+        </Switch>
+        {/* <Chat client={cclient} /> */}
       </main>
     </div>
   );

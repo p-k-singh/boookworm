@@ -48,17 +48,6 @@ function Welcome(props) {
     fire
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      // .catch((err) => {
-      //   switch (err.code) {
-      //     case "auth/email-already-in-use":
-      //     case "auth/invalid-email":
-      //       setEmailError(err.message);
-      //       break;
-      //     case "auth/weak-password":
-      //       setPasswordError(err.message);
-      //       break;
-      //   }
-      // });
       console.log("signup work")
   };
 
@@ -138,11 +127,6 @@ function Welcome(props) {
           style={{
             position: "absolute",
             width: "100%",
-            //left: "50%",
-            //top: "50%",
-            //height: "100%",
-            //objectFit: "cover",
-            // transform: "translate(-50%,-50%)",
             zIndex: "-1",
           }}
         >
