@@ -114,6 +114,7 @@ export default function App(props) {
   const rotateY = useTransform(x, [-100, 100], [-30, 30]);
   const [cnt,setCnt] = useState(-1);
   const [tmp,setTmp] = useState(false);
+  
 
   //   width: 200px;
   //   height: 250px;
@@ -192,18 +193,23 @@ export default function App(props) {
     .then(res=> {
       console.log(res.data)
       setPeople(res.data)
+      
     })
   },[])
   
   const sendKey = (item,response) => {
+    // console.log(value)
+    console.log(item)
     var key = item.key;
     key = key.substring(1);
     key = parseInt(key);
     if(key==0){
       setTmp(true);
     }
+    console.log(key)
     if(response){
-
+     
+      console.log(people[key]);
       let user = firebase.auth().currentUser;
       let userId = user.uid;
       axios.post('https://6h6nlvoxy8.execute-api.ap-south-1.amazonaws.com/Staging01/swipe-right',{
@@ -211,7 +217,8 @@ export default function App(props) {
         "user2": people[key].ownerId,
         "bookId": people[key].bookId
       })
-      console.log(people[key]);
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
       
     }
   }

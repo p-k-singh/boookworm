@@ -112,7 +112,7 @@ const PersonalChat = (props) => {
                     <Launcher
 
                         agentProfile={{
-                            teamName: 'react-chat-window',
+                            teamName: 'Matched user',
                             imageUrl: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png'
                         }}
                         onMessageWasSent={(event) => sendMsg(event)}
