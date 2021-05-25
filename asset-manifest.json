@@ -1,30 +1,32 @@
 {
   "files": {
-    "main.css": "/boookworm/static/css/main.122fecc8.chunk.css",
-    "main.js": "/boookworm/static/js/main.14bab958.chunk.js",
-    "main.js.map": "/boookworm/static/js/main.14bab958.chunk.js.map",
-    "runtime-main.js": "/boookworm/static/js/runtime-main.3876c52b.js",
-    "runtime-main.js.map": "/boookworm/static/js/runtime-main.3876c52b.js.map",
-    "static/css/2.c66f24a4.chunk.css": "/boookworm/static/css/2.c66f24a4.chunk.css",
-    "static/js/2.29ebb5d6.chunk.js": "/boookworm/static/js/2.29ebb5d6.chunk.js",
-    "static/js/2.29ebb5d6.chunk.js.map": "/boookworm/static/js/2.29ebb5d6.chunk.js.map",
-    "static/js/3.47e38761.chunk.js": "/boookworm/static/js/3.47e38761.chunk.js",
-    "static/js/3.47e38761.chunk.js.map": "/boookworm/static/js/3.47e38761.chunk.js.map",
+    "main.css": "/boookworm/static/css/main.359537ad.chunk.css",
+    "main.js": "/boookworm/static/js/main.4f79af8a.chunk.js",
+    "main.js.map": "/boookworm/static/js/main.4f79af8a.chunk.js.map",
+    "runtime-main.js": "/boookworm/static/js/runtime-main.29ca5614.js",
+    "runtime-main.js.map": "/boookworm/static/js/runtime-main.29ca5614.js.map",
+    "static/css/2.565e6368.chunk.css": "/boookworm/static/css/2.565e6368.chunk.css",
+    "static/js/2.a7fd3ac0.chunk.js": "/boookworm/static/js/2.a7fd3ac0.chunk.js",
+    "static/js/2.a7fd3ac0.chunk.js.map": "/boookworm/static/js/2.a7fd3ac0.chunk.js.map",
+    "static/js/3.2421d90d.chunk.js": "/boookworm/static/js/3.2421d90d.chunk.js",
+    "static/js/3.2421d90d.chunk.js.map": "/boookworm/static/js/3.2421d90d.chunk.js.map",
     "index.html": "/boookworm/index.html",
-    "static/css/2.c66f24a4.chunk.css.map": "/boookworm/static/css/2.c66f24a4.chunk.css.map",
-    "static/css/main.122fecc8.chunk.css.map": "/boookworm/static/css/main.122fecc8.chunk.css.map",
-    "static/js/2.29ebb5d6.chunk.js.LICENSE.txt": "/boookworm/static/js/2.29ebb5d6.chunk.js.LICENSE.txt",
+    "static/css/2.565e6368.chunk.css.map": "/boookworm/static/css/2.565e6368.chunk.css.map",
+    "static/css/main.359537ad.chunk.css.map": "/boookworm/static/css/main.359537ad.chunk.css.map",
+    "static/js/2.a7fd3ac0.chunk.js.LICENSE.txt": "/boookworm/static/js/2.a7fd3ac0.chunk.js.LICENSE.txt",
     "static/media/1.4ce45dee.jpg": "/boookworm/static/media/1.4ce45dee.jpg",
+    "static/media/Lrsign.8b1a2507.mp4": "/boookworm/static/media/Lrsign.8b1a2507.mp4",
     "static/media/chat-icon.f032be1d.svg": "/boookworm/static/media/chat-icon.f032be1d.svg",
     "static/media/image.4ce45dee.png": "/boookworm/static/media/image.4ce45dee.png",
     "static/media/logo-no-bg.4d881dc9.svg": "/boookworm/static/media/logo-no-bg.4d881dc9.svg",
-    "static/media/notification.aa8f8c40.mp3": "/boookworm/static/media/notification.aa8f8c40.mp3"
+    "static/media/notification.aa8f8c40.mp3": "/boookworm/static/media/notification.aa8f8c40.mp3",
+    "static/media/rsign.e74e21cd.mp4": "/boookworm/static/media/rsign.e74e21cd.mp4"
   },
   "entrypoints": [
-    "static/js/runtime-main.3876c52b.js",
-    "static/css/2.c66f24a4.chunk.css",
-    "static/js/2.29ebb5d6.chunk.js",
-    "static/css/main.122fecc8.chunk.css",
-    "static/js/main.14bab958.chunk.js"
+    "static/js/runtime-main.29ca5614.js",
+    "static/css/2.565e6368.chunk.css",
+    "static/js/2.a7fd3ac0.chunk.js",
+    "static/css/main.359537ad.chunk.css",
+    "static/js/main.4f79af8a.chunk.js"
   ]
 }
