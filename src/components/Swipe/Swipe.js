@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import Gmain from './Gmain';
 import Mainsxn  from "./Mainsxn";
 import { Gmcard } from "./Gmcard";
+import "./Swipe.css"
+import sample from "../../Assets/rsign.mp4";
 
   const AppContainer = styled.div`
     width: 100%;
@@ -16,9 +18,26 @@ import { Gmcard } from "./Gmcard";
 
 const Swipe = () => {
   return (  
-           <Mainsxn />
-            
-        //  <Gmcard/>
+    <div id="containeer">
+<div id="navix"> <video
+          className="videoTag"
+          autoPlay
+          loop
+          muted
+          style={{
+            position: "absolute",
+            width: "1520%",
+            zIndex: "-1",
+          }}
+        >
+          <source src={sample} type="video/mp4"></source>
+        </video></div>
+<div id="infoix">
+<Mainsxn />
+</div>
+</div>
+  // <Mainsxn/> 
+    
     );
 }
 export default Swipe;

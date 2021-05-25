@@ -1,8 +1,10 @@
 import React from 'react'
-import Gmessenger from  '../Messenger/Gmessenger'
+// import Gmessenger from  '../Messenger/Gmessenger'
 const Forum = () => {
     return (
-        <Gmessenger/>
+        // <Gmessenger/>
+        <h1> Coming Soon...</h1>
+      
     )
 }
 

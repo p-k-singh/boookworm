@@ -241,16 +241,16 @@ const Profileedit = (props) => {
   }
 
   return (
-    <Form>
-      <Grid container>
+    <Form >
+      <Grid container style={{marginTop:"2em"}}>
         <Grid items xs={4}>
-          <div className="Picmerror">
+          <div className="Picmerror" >
             {imgerror && <p className="imgerrormsg">File Format Unsupported</p>}
           </div>
           <div className="userxpic">
             <div
               className="imgPreview"
-              style={{
+              style={{ minWidth: "10em",
                 background: imgprev
                   ? `url("${imgprev}") no-repeat center/cover`
                   : "#131313",
@@ -279,8 +279,8 @@ const Profileedit = (props) => {
               <Button
                 onClick={() => setImgprev(null)}
                 variant="contained"
-                style={{ float: "right" }}
-                color="primary"
+                style={{ float: "right", background:"#FA2A74", color:"white" }}
+                
               >
                 Change Profile Picture
               </Button>
@@ -288,13 +288,14 @@ const Profileedit = (props) => {
           </div>
         </Grid>
 
-        <Grid items xs={3}>
+        <Grid items xs={3}  >
           <Inputgm
             label="Full Name"
             id="fullname"
             name="fullname"
             value={fullname}
             onChange={(event) => setFullname(event.target.value)}
+         
           />
           <Inputgm
             label="Email"
@@ -319,7 +320,7 @@ const Profileedit = (props) => {
           />
           <Location setCoordinates = {setCoordinates} />
 
-<Grid style={{paddingTop : 20, paddingBottom : 20}} item xs={12}>
+<Grid style={{color:"#FA2A74",paddingTop : 20, paddingBottom : 20}} item xs={12}>
             <Select
               isMulti
               styles={selectStyles}
@@ -360,8 +361,8 @@ const Profileedit = (props) => {
             <span>Distance Discovery</span>
           </div>
           {/* <p style={{margin : 20, marginRight: 9, fontWeight: 15, fontSize: 15}}>Distance Discovery</p> */}
-          <Slider
-            style={{ width: 800, marginTop: 10, marginLeft: 15 }}
+          <Slider    
+            style={{ width: 800, marginTop: 10, marginLeft: 15, color:"#FA2A74" }}
             min={0}
             max={100}
             default
@@ -379,8 +380,8 @@ const Profileedit = (props) => {
           <Button
             onClick={() => handleSubmit()}
             variant="contained"
-            style={{ float: "right" }}
-            color="primary"
+            style={{ float: "right" ,background:"#FA2A74",color:"white"}}
+            
           >
             Submit
           </Button>

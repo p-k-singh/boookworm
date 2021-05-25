@@ -38,6 +38,10 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  paper: {
+    background: 'linear-gradient(45deg, #fff 400%, #29292900 90%)',
+    color: '#EE0558',
+  }
 }));
 
 export default function ButtonAppBar() {
@@ -54,40 +58,41 @@ export default function ButtonAppBar() {
   };
 
   const list = (anchor) => (
-    <div
+    <div style={{marginTop : "3.5em"}}
       className={clsx(classes.list, {
         [classes.fullList]: anchor === 'top' || anchor === 'bottom',
       })}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
+     
     >
       <List>
         <ListItem button component={Link} to="/myProfile" key='myProfile'>
-          <ListItemIcon> <PersonIcon /></ListItemIcon>
+          <ListItemIcon> <PersonIcon style={{color:"#FA2A74"}}/></ListItemIcon>
           <ListItemText primary='My Profile' />
         </ListItem>
         <ListItem button component={Link} to="/swipe" key='swipe'>
-          <ListItemIcon> <TouchAppIcon /></ListItemIcon>
+          <ListItemIcon> <TouchAppIcon style={{color:"#FA2A74"}}/></ListItemIcon>
           <ListItemText primary='Swipe' />
         </ListItem>
         <ListItem button component={Link} to="/myLibrary" key='myLibrary'>
-          <ListItemIcon> <LocalLibraryIcon /></ListItemIcon>
+          <ListItemIcon> <LocalLibraryIcon style={{color:"#FA2A74"}}/></ListItemIcon>
           <ListItemText primary='My Library' />
         </ListItem>
         <ListItem button component={Link} to="/chat" key='chat'>
-          <ListItemIcon> <ChatBubbleIcon /> </ListItemIcon>
+          <ListItemIcon> <ChatBubbleIcon style={{color:"#FA2A74"}}/> </ListItemIcon>
           <ListItemText primary='Chat' />
         </ListItem>
       </List>
       <Divider />
       <List>
         <ListItem button component={Link} to="/forum" key='forum'>
-          <ListItemIcon> <ForumIcon /></ListItemIcon>
+          <ListItemIcon> <ForumIcon style={{color:"#FA2A74"}} /></ListItemIcon>
           <ListItemText primary='Forum' />
         </ListItem>
         <ListItem button component={Link} to="/google.com" key='reviewSection'>
-          <ListItemIcon> <RateReviewIcon /></ListItemIcon>
+          <ListItemIcon> <RateReviewIcon style={{color:"#FA2A74"}}/></ListItemIcon>
           <ListItemText primary='Review Section' />
         </ListItem>
 
@@ -99,12 +104,12 @@ export default function ButtonAppBar() {
     </div>
   );
   return (
-    <div className="gmnav" >
+    <div className="gmnav"  style = {{background:"pink"}} >
 
-      <Drawer anchor='left' open={state['left']} onClose={toggleDrawer('left', false)}>
+      <Drawer   classes={{ paper: classes.paper }} anchor='left' open={state['left']} onClose={toggleDrawer('left', false)}>
         {list('left')}
       </Drawer>
-      <AppBar >
+      <AppBar style={{background:"#252222", color:"#FA2A74"}}>
         <Toolbar>
           <IconButton onClick={toggleDrawer('left', true)} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />

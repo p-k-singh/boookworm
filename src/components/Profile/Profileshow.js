@@ -95,7 +95,7 @@ const Profileshow = (props) => {
 
   return (
     <Form>
-      <Grid container>
+      <Grid container style={{marginTop:"3em"}}>
       <Grid items xs={4}>
         <div className = "Picmerror">
           {imgerror && <p className = "imgerrormsg">File Format Unsupported</p>}

@@ -8,9 +8,10 @@ import Loader from '../Utils/Loading'
 import {Pointeryes} from "./Pointeryes"
 import {Pointerno} from "./Pointerno"
 // import { Gmcard } from "./Gmcard";
+import sample from "../../Assets/Lrsign.mp4";
 
 import BookImg from "../Swipe/boo/1.jpg";
-// import { Bookdetails } from "./Bookdetails";
+// import { Bookdetails } from "./  Bookdetails";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useState } from "react";
 
@@ -70,7 +71,7 @@ const TopContainer = styled.div`
 const BottomContainer = styled.div`
   display: flex;
   flex: 1.2;
-  margin-top: 0.77em;
+  margin-top: 0.7em;
   //   padding-bottom: 4rem
 `;
 
@@ -98,7 +99,7 @@ const Book = styled(motion.div)`
   z-index: 99;
   user-select: none;
   margin-right: 0em;
-  margin-top: 3em;
+  margin-top: 2.4em;
   img {
     width: auto;
     height: 85%;
@@ -150,9 +151,11 @@ export default function App(props) {
   const DetailsContainer = styled.div`
     width: 100%;
     height: 100%;
+    max-width: 100%;
+    max-height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 2.6em 6px 2px 6px;
+    padding: 2.6em 6px 3px 6px;
     line-height: 1.4;
   `;
 
@@ -202,11 +205,27 @@ export default function App(props) {
     console.log(item)
     var key = item.key;
     key = key.substring(1);
-    key = parseInt(key);
+    var lengthOfString = key.length;
+    console.log(lengthOfString);
+    var idx = 0,power = 1;
+    for(var i = lengthOfString-1;i>=0;i--){
+      if(key.charCodeAt(i)>=97 && key.charCodeAt(i)<=122){ // 86 = 97-11 // 48
+        idx+=power*(key.charCodeAt(i)-87)
+      }
+      else{
+        idx+=power*(key.charCodeAt(i)-48)
+      }
+      power = power*36
+    }
+    console.log(idx)
+    //idx = parseInt(key);
+    key = idx
+    key = parseInt(key)
     if(key==0){
       setTmp(true);
     }
     console.log(key)
+    
     if(response){
      
       console.log(people[key]);
@@ -227,9 +246,11 @@ export default function App(props) {
       <Loader mt='18%' />
     )
   }
-  return (
+  return ( 
+   
     <div className="Mainsxn" >
-      {tmp ? <h1>NO BOOKS </h1>
+      
+      {tmp ? <h1>Try After Some Time or Increase Your Distance</h1>
       :
       <Wrapper
         onVote={(item, vote) => {
@@ -238,7 +259,7 @@ export default function App(props) {
           
           console.log(item, vote);
         }}
-        style={{ x, y, rotateX, rotateY, z: 100, background: "#fff" }}
+        style={{ x, y, rotateX, rotateY, z: 100, background: "rgba(0, 0, 0, 0)" }}
         drag
         dragElastic={0.16}
         dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
@@ -265,7 +286,7 @@ export default function App(props) {
                   whileTap={{ cursor: "grabbing" }}
                 >
                   {/* <div style = {{backgroundImage: 'img'}}></div> */}
-                  <img  src={person.bookPicLink} />
+                  <img  src={person.bookPicLink} style={{maxWidth:"300px", maxHeight:"400px"}}/>
                 </Book>
               </BookWrapper>
             </TopContainer>
@@ -274,7 +295,7 @@ export default function App(props) {
             <BottomContainer>
               <DetailsContainer>
                 <SmalText style={{ color: "#ff17a3" }}>
-                  {person.distance} KM Far
+                  {Math.ceil(person.distance)} KM Far
                 </SmalText>
                
                   <MediumText style={{ color: "orange" }}>{person.title}</MediumText>
@@ -294,5 +315,9 @@ export default function App(props) {
       </Wrapper>
 }
     </div>
+    
   );
 }
+
+
+

@@ -1,0 +1,16 @@
+#containeer {
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+#navix,
+#infoix {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#infoi {
+  z-index: 10;
+}

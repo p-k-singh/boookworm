@@ -7,7 +7,7 @@ return (
     <div align='center' style={{marginTop:props.mt}}>
     <Loader
     type="Puff"
-        color="#fd4dcc"
+        color="#FA2A74"
         height={80}
         width={100}
         timeout={60000} //3 secs
