@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/boookworm/static/css/main.359537ad.chunk.css",
-    "main.js": "/boookworm/static/js/main.4f79af8a.chunk.js",
-    "main.js.map": "/boookworm/static/js/main.4f79af8a.chunk.js.map",
+    "main.js": "/boookworm/static/js/main.e416dc82.chunk.js",
+    "main.js.map": "/boookworm/static/js/main.e416dc82.chunk.js.map",
     "runtime-main.js": "/boookworm/static/js/runtime-main.29ca5614.js",
     "runtime-main.js.map": "/boookworm/static/js/runtime-main.29ca5614.js.map",
     "static/css/2.565e6368.chunk.css": "/boookworm/static/css/2.565e6368.chunk.css",
@@ -27,6 +27,6 @@
     "static/css/2.565e6368.chunk.css",
     "static/js/2.a7fd3ac0.chunk.js",
     "static/css/main.359537ad.chunk.css",
-    "static/js/main.4f79af8a.chunk.js"
+    "static/js/main.e416dc82.chunk.js"
   ]
 }
